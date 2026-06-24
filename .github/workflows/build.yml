@@ -1,0 +1,25 @@
+name: Build iOS Tweak IPA
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-13
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Theos
+        uses: theos/setup-theos-action@v1.1
+
+      - name: Build Tweak
+        run: |
+          make package FINALPACKAGE=1
+
+      - name: Upload Compiled Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: YouTubeCustomTweak-Package
+          path: .theos/obj/*.dylib
