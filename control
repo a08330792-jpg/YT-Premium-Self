@@ -1,0 +1,8 @@
+Package: com.yourname.ytpremiumself
+Name: YTPremiumSelf
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Блокировка рекламы и Premium-битрейт для YouTube.
+Maintainer: user
+Author: user
